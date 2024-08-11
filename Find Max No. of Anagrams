@@ -1,0 +1,25 @@
+The first line contains an integer, N, denoting the number of elements in A.
+• Each line i of the N subsequent lines (where 0 <= 1 < N ) contains a string describing A[i].
+
+Sample Testcases
+
+    Input                                   Output          Output Description
+abc bca cdf                                    2                Here "abc" and "bca" are anagrams of each other. Hence, the maximum number of strings we can choose is 2.
+"abc","def","ghi"                              1                There are no two strings which are anagrams of each other. Hence, there is only 1 string we can choose.
+"abcd" "abcd", "dcba", "pqrs", "rqsp"          3                "abcd", "abcd" and "dcba" these 3 strings are anagrams of each other. Hence, here we can choose 3 strings.
+
+
+
+def maxAnagrams(N, A):
+    # Write your code here
+    cnt = 1
+    for i in range(0,N) :
+        A[i] = sorted(A[i])
+    cnt = 1
+    for i in range (0,N):
+        cur = 1
+        for j in range (i+1,N):
+            if A[i] == A[j]:
+                cur += 1
+                cnt = max(cur,cnt)
+    return cnt
