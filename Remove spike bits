@@ -1,0 +1,24 @@
+Every decimal number can be changed into its binary form.Suppose your computer has it's own Corona Virus,that eats binary digits from the right side of a number.
+Suppose a virus has 6 spikes,it will eat up 6 LSB binary digits in your numbers.
+You will have a bunch of numbers,and your machine will have a virus with n spikes,you have to calculate what will be the final situation of the final numbers.
+
+Sample Input
+N:5
+array V:1 2 3 4 5
+Number of Spikes:2
+Sample Output: 0 0 0 1 1  (5 = 101 ,removed last two bits for spike = 2)
+
+
+def removeBit(n,arr):
+    ans = []
+    for i in arr:
+        st = bin(i)[2:-n]
+        if(st == ''):
+            ans.append(0)
+        else :
+            ans.append(int(st,2))
+    print(ans)
+user_input = input("Enter a list (e.g., [1, 'a', 3.5]): ") 
+ar = eval(user_input)
+n = int(input("Enter spike: "))
+removeBit(n,ar)
