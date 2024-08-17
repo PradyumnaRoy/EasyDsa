@@ -1,0 +1,43 @@
+Arnab has given me a challenge.I have to calculate the number of numbers which are less than a certain value n,and have exactly k set bits in its binary form.As you are a
+Prepster like me,help me write a code that will take input for n and k and give the expected output.
+Input format:
+   First line containing n and k space separated.
+Output format:
+   Number of numbers present in a single line
+Sample Input
+   72
+Sample Output
+   3
+Constraints:
+1<=n<=10000
+1<=k<=10
+
+
+import java.util.*;
+public class countNumberWith_k_SetBit {
+	public static void main(String [] args) {
+		Scanner sc = new Scanner(System.in);
+		int n,k;
+		System.out.println("Enter the value of n:");
+		n = sc.nextInt();
+		System.out.println("Enter the value of  k:");
+		k = sc.nextInt();
+		int temp = 1,count = 0;
+
+		while(temp < n) {
+			int tt = temp,cnt = 0;
+			while(tt > 0) {
+				int bit = tt & 1;
+				if(bit == 1) {
+					cnt++;
+				}
+				tt = tt >> 1;
+			}
+			if(cnt == k) {
+				count++;
+			}
+			temp++;
+		}
+		System.out.println(count);
+	}
+}
