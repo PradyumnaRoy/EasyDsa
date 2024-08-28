@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) {
         int number = 123450;
 
-        // Convert number to String
+       
         String numberStr = Integer.toString(number);
 
         // Reverse the string using StringBuilder
@@ -41,14 +41,9 @@ public class Main {
 public class Main {
     public static void main(String[] args) {
         int number = 12345;
-
-        // Convert number to String
         String numberStr = Integer.toString(number);
-
-        // Reverse the string using StringBuilder
+   
         String reversedStr = new StringBuilder(numberStr).reverse().toString();
-
-        // Convert the reversed string back to an integer
         int reversedNumber = Integer.parseInt(reversedStr);
 
         System.out.println("Reversed Number: " + reversedNumber);
