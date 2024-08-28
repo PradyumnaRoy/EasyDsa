@@ -17,3 +17,40 @@ public class Main {
 
 
     // Second using String
+public class Main {
+    public static void main(String[] args) {
+        int number = 123450;
+
+        // Convert number to String
+        String numberStr = Integer.toString(number);
+
+        // Reverse the string using StringBuilder
+        StringBuilder str = new StringBuilder(numberStr);
+        StringBuilder st = str.reverse();
+        String reversedStr = st.toString();
+
+        // Convert the reversed string back to an integer
+        int reversedNumber = Integer.parseInt(reversedStr);
+
+        System.out.println("Reversed Number: " + reversedNumber);
+    }
+}
+
+   //or
+
+public class Main {
+    public static void main(String[] args) {
+        int number = 12345;
+
+        // Convert number to String
+        String numberStr = Integer.toString(number);
+
+        // Reverse the string using StringBuilder
+        String reversedStr = new StringBuilder(numberStr).reverse().toString();
+
+        // Convert the reversed string back to an integer
+        int reversedNumber = Integer.parseInt(reversedStr);
+
+        System.out.println("Reversed Number: " + reversedNumber);
+    }
+}
